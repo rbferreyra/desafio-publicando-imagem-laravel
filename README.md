@@ -28,7 +28,6 @@ Lembre-se: Ao gerar o build da imagem, TODO o conteúdo incluindo arquivos como 
 
 Adicione o endereço da imagem do seu dockerhub no README.md e faça o commit do projeto contendo todos os arquivos (laravel + docker) para um repositório público do Github.
 
-
 ## Docker
 
 Criar tag do projeto para o repositório
@@ -40,12 +39,12 @@ docker tag laravel_app rbferreyra/desafio-publicando-imagem-laravel
 Publicar imagem para o repositório
 
 ```bash
-docker push rbferreyra/desafio-publicando-imagem-laravel 
+docker push rbferreyra/desafio-publicando-imagem-laravel
 ```
 
 Repositório da imagem
 
-https://hub.docker.com/repository/docker/rbferreyra/desafio-publicando-imagem-laravel
+[https://hub.docker.com/repository/docker/rbferreyra/desafio-publicando-imagem-laravel](https://hub.docker.com/repository/docker/rbferreyra/desafio-publicando-imagem-laravel)
 
 ## Aplicação
 
@@ -55,12 +54,16 @@ Clonar o repositório e executar os comandos abaixo:
 composer install
 ```
 
-Executar a migration da aplicação
+Definir permissão para o entrypoint.sh
 
 ```bash
-php artisan migrate
+chmod +x .docker/entrypoint.sh
 ```
 
 Rodar a aplicação
 
-http://localhost:8000
+```bash
+docker-compose up -d
+```
+
+[http://localhost:8000](http://localhost:8000)
