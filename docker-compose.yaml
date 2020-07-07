@@ -4,7 +4,12 @@ services:
     app:
         build: .docker/app
         container_name: app
-        entrypoint: dockerize -wait tcp://mysql:3306 -timeout 120s ./.docker/entrypoint.sh
+        entrypoint: dockerize -template ./.docker/app/.env:.env -wait tcp://mysql:3306 -timeout 120s ./.docker/entrypoint.sh
+        environment: 
+            - DB_HOST=mysql
+            - DB_DATABASE=laravel
+            - DB_USERNAME=root
+            - DB_PASSWORD=root
         volumes: 
             - .:/var/www
         networks: 

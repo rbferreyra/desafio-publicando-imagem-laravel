@@ -48,12 +48,6 @@ Repositório da imagem
 
 ## Aplicação
 
-Clonar o repositório e executar os comandos abaixo:
-
-```bash
-composer install
-```
-
 Definir permissão para o entrypoint.sh
 
 ```bash
